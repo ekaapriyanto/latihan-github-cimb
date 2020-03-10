@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kasir</title>
+</head>
+<body>
+    <script>
+    let sandwich = 'masukan harga sandwich'
+    let input1 = parseInt(prompt(sandwich))
+    let salad = 'masukan harga salad'
+    let input2 = parseInt(prompt(salad))
+    let burger = 'masukan harga burger'
+    let input3 = parseInt(prompt(burger))
+    let french = 'masukan harga french fries'
+    let input4 = parseInt(prompt(french))
+    let jumlah = 'total semua'
+    let hasil = ((input1 *4)+(input2 *5)+(input3 *2)+(input4*7))
+    //alert(intro)
+    //prompt(intro)
+    
+    alert(hasil)
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMT</title>
+</head>
+<body>
+    <script>
+        let input1 = parseInt(prompt('masukan berat badan'))
+        let input2 = parseInt(prompt('masukan tinggi bdan'))
+
+        let rumus = input1 / ((input2)*input2)
+
+        if (rumus >= 39.9){
+            alert('Obesitas')
+        }
+        else if(rumus >= 29.9){
+            alert('sangat berlebih')
+        }
+        else if(rumus >= 24.4){
+            alert('berlebih')
+        }
+        else if(rumus >= 18.5){
+            alert('ideal')
+        }
+        else {
+            alert('kurang')
+        }
+
+        alert(rumus)
+    </script>
+</body>
+</html>

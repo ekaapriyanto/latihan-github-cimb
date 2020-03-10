@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+</head>
+
+<body>
+    <script>
+        let mangga = 6000
+        let anggur = 10000
+        let sirsak = 4000
+        let pepaya = 7000
+
+        let stkmangga = 10
+        let stkanggur = 11
+        let stksirsak = 12
+        let stkpepaya = 13
+
+        do {
+
+            alert(`Selamat datang di menu belanja kami
+        Dengan menu di bawah
+        Mangga hraga = ${mangga} Stock = ${stkmangga}
+        Mangga hraga = ${anggur} Stock = ${stkanggur}
+        Mangga hraga = ${sirsak} Stock = ${stksirsak}
+        Mangga hraga = ${pepaya} Stock = ${stkpepaya}`)
+
+            let kondisi = true
+
+            do {
+                var imangga = parseInt(prompt('Harga mangga perkilo 6000 \n masukan jumlah mangga'))
+                if (imangga < stkmangga) {
+                    kondisi = false
+                }
+                else {
+                    alert('stok mangga tidak mencukupi silakan masukan ulang')
+                    kondisi = true
+                }
+            }
+            while (kondisi)
+            do {
+                var ianggur = parseInt(prompt('Harga anggur perkilo 10000 \n masukan jumlah anggur'))
+                if (ianggur < stkanggur) {
+                    kondisi = false
+                }
+                else {
+                    alert('stok anggur tidak mencukupi silakan masukan ulang')
+                    kondisi = true
+                }
+            }
+            while (kondisi)
+            do {
+                var isirsak = parseInt(prompt('Harga sirsak perkilo 4000 \n masukan jumlah sirsak'))
+                if (isirsak < stksirsak) {
+                    kondisi = false
+                }
+                else {
+                    alert('stok sirsak tidak mencukupi silakan masukan ulang')
+                    kondisi = true
+                }
+            }
+            while (kondisi)
+            do {
+                var ipepaya = parseInt(prompt('Harga pepaya perkilo 7000 \n masukan jumlah pepaya'))
+                if (ipepaya < stkpepaya) {
+                    kondisi = false
+                }
+                else {
+                    alert('stok pepaya tidak mencukupi silakan masukan ulang')
+                    kondisi = true
+                }
+            }
+            while (kondisi)
+
+            let jmlhmangga = imangga * mangga
+            let jmlhanggur = ianggur * anggur
+            let jmlhsirsak = isirsak * sirsak
+            let jmlhpepaya = ipepaya * pepaya
+
+            var jumlah = (jmlhmangga + jmlhanggur + jmlhsirsak + jmlhpepaya)
+
+            alert('total harga mangga >>' + jmlhmangga + '\ntotal harga anggur  >>' + jmlhanggur +
+                '\ntotal harga sirsak   >>' + jmlhsirsak + '\ntotal harga pepaya  >>' + jmlhpepaya +
+                '\ntotal belanja semua >>> ' + jumlah)
+
+            do {
+                let uang = parseInt(prompt('silakan masukan uang yang di bayar'))
+                let kembalian = uang - jumlah
+
+                if (kembalian > 0) {
+                    alert('uang anda ' + uang + '\ntotal dibayar ' + jumlah + '\nkembalian ' + kembalian)
+                    kondisi = false
+                }
+                else if (kembalian < 0) {
+                    alert('uang anda kurang')
+                    kondisi = true
+                }
+                else {
+                    (kembalian == 0)
+                    alert('anda membayar dengan uang pas')
+                    kondisi = false
+                }
+            }
+            while (kondisi)
+
+            var konfir = confirm('apakah anda ingin belanja lagi')
+            if (konfir == true){
+                stkmangga = stkmangga - imangga
+                stkanggur = stkanggur - ianggur
+                stksirsak = stksirsak - isirsak
+                stkpepaya = stkpepaya - ipepaya
+                konfir = true
+            }else{
+                konfir = false
+            }
+
+        }
+
+        while (konfir == true)
+    </script>
+</body>
+
+</html>

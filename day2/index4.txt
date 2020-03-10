@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = parseInt(prompt('masukan nilai'))
+        if (input >= 90){
+            alert('nilai A')
+        }
+        else if (input >= 80){
+            alert('nilai B')
+        }
+        else if (input >= 70){
+            alert('nilai C')
+        }
+        else if (input >= 60){
+            alert('nilai D')
+        }
+        else{
+            alert('nilai E')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrData = [
+            { nama: 'Mangga', harga: 7000, stok: 50, inputUser: 0, jumlah: 0 },
+            { nama: 'Anggur', harga: 10000, stok: 50, inputUser: 0, jumlah: 0 },
+            { nama: 'Duruan', harga: 15000, stok: 50, inputUser: 0, jumlah: 0 }
+        ]
+        let pilih;
+        let pilihIndex;
+        let qty;
+        let chart;
+        let jumlahtot;
+        let bayar;
+        let isRepeat = true
+
+        let menu = ''
+
+        do {
+            menu = 'Selamat datang di Pie Store\nsilakan pilih menu di bawah ini\n\n'
+
+            for (let i = 0; i < arrData.length; i++) {
+                menu += `${i + 1} harga buah ${arrData[i].nama} Rp ${arrData[i].harga},- dengan stok ${arrData[i].stok}\n`
+            }
+            menu += `\n\n${arrData.length + 1}. Checkout`
+            pilih = parseInt(prompt(menu))
+            pilihIndex = pilih - 1
+
+            if (pilih == arrData.length + 1) {
+                jumlahtot = 0
+                for (let i = 0; i < arrData.length; i++) {
+                    jumlahtot = jumlahtot + (arrData[i].harga * arrData[i].inputUser)
+                }
+                
+                do {
+                    bayar = prompt(`Total belanjaan anda sebesar ${jumlahtot}\nsilahkan input nominal uang yang di bayar`)
+                    if (bayar > jumlahtot) {
+                        alert(`Uang anda ${bayar}\nTotal belanja ${jumlahtot}\nKembalian ${bayar - jumlahtot}`)
+                        isRepeat = false
+                    }
+                    else if (bayar < jumlahtot) {
+                        alert(`Uang anda kurang ${jumlahtot - bayar}`)
+                        isRepeat = true
+                    }
+                    else if (bayar == jumlahtot) {
+                        alert('terimakasih anda membayar dengan uang pas')
+                        isRepeat = false
+                    }
+                } while (isRepeat)
+
+                for (let i = 0; i < arrData.length; i++) {
+                    arrData[i].stok -= arrData[i].inputUser
+                    arrData[i].inputUser = 0
+                }
+                isRepeat = confirm('apa anda mau belanja lagi')
+            }
+            else {
+                do {
+                    qty = parseInt(prompt(`masukan jumlah buah ${arrData[pilihIndex].nama} yang di beli`))
+                            if (arrData[pilihIndex].stok >= qty + arrData[pilihIndex].inputUser){
+                                arrData[pilihIndex].inputUser += qty
+                                isRepeat = false
+                            } else {
+                                alert(`Stok ${arrData[pilihIndex].nama} tidak cukup`)
+                                isRepeat = true
+                            }
+                        }while(isRepeat)
+                        isRepeat = true
+                    }
+        } while (isRepeat)
+    </script>
+</body>
+
+</html>

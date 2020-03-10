@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+
+<body>
+    <style>
+        table,tr,td {
+            border: 1px solid black;
+            font-size: 300;
+            font-style: oblique;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+    <table id="menu">
+        <tr></tr><th>Buah</th></tr>
+        <td>no</td>
+        <td>Nama</td>
+        <td>harga</td>
+        <td>stok</td>
+    </table>
+</body>
+<script>
+    class Buah {
+        constructor(nama, harga, stok) {
+            this.nama = nama;
+            this.harga = harga;
+            this.stok = stok;
+        }
+    }
+    let arrBuah = [
+        new Buah('Mangga', 10000, 50),
+        new Buah('Anggur', 10000, 50),
+        new Buah('Durian', 10000, 50),
+    ]
+    let menu = ''
+    for (let i = 0; i < arrBuah.length; i++) {
+        document.getElementById("menu").innerHTML +=
+        `<tr>
+        <td>${i + 1}</td>
+        <td>${arrBuah[i].nama}</td>
+        <td>Rp ${arrBuah[i].harga}</td>
+        <td>${arrBuah[i].stok}</td>
+    </tr>`
+    }
+</script>
+
+</html>

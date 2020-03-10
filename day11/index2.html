@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td><strong onclick="sortDataNama()">Nama</strong></td>
+                <td><strong onclick="sortDataPekerjaan()">Pekerjaan</strong></td>
+                <td><strong onclick="sortDataUmur()">Umur</strong></td>
+                <td><strong>Gambar</strong></td>
+            </tr>
+        </thead>
+        <tbody id="demo">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input id="inputNama" type="text" placeholder="Input Nama"></td>
+                <td><input id="inputPekerjaan" type="text" placeholder="Input Pekerjaan"></td>
+                <td><input id="inputUmur" type="number" placeholder="Input Umur"></td>
+                <td><input id="inputGambar" type="txt" placeholder="input gambar"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <button type="button" onclick="addData()">submit</button>
+</body>
+<script>
+    class Data {
+        constructor(nama, pekerjaan, umur, pic) {
+            this.nama = nama
+            this.pekerjaan = pekerjaan
+            this.umur = umur
+            this.pic = pic
+        }
+    }
+    let dataHuman = [
+        new Data('pie', 'CS', 20, 'https://www.pngkey.com/png/detail/207-2075697_blue-human-icon-png-persons-svg-icon.png'),
+        new Data('eka', 'ITDP', 23, 'https://www.pngkey.com/png/detail/207-2075697_blue-human-icon-png-persons-svg-icon.png'),
+        new Data('api', 'Teller', 22, 'https://www.pngkey.com/png/detail/207-2075697_blue-human-icon-png-persons-svg-icon.png')
+    ]
+    let deleteIndex;
+
+    const renderData = () => {
+        let hasil = ''
+        dataHuman.forEach(({ nama, pekerjaan, umur, pic }) => {
+            hasil += `
+            <tr>
+                <td>${nama}</td>
+                <td>${pekerjaan}</td>
+                <td>${umur}</td>
+                <td><img src=${pic} width='100px'</td>
+                <td><button type="button" onclick="delData()">Delete</button></td>
+            </tr>`
+        })
+        document.getElementById('demo').innerHTML = hasil
+    }
+    renderData()
+    let counter = 0
+    const sortDataNama = () => {
+        if (counter == 0) {
+            dataHuman.sort(function (a, b) {
+                if (a.nama < b.nama) {
+                    return -1
+                }
+                return 1
+            })
+            counter++
+        }
+        else{
+            dataHuman.sort(function sort(b,a){
+                if (a.nama < b.nama){
+                    return -1
+                }
+                return 1
+            })
+            counter--
+        }
+        renderData()
+    }
+    sortDataNama()
+    //==================================== Sort Pekerjaan
+    const sortDataPekerjaan = () => {
+        if (counter == 0) {
+            dataHuman.sort(function (a, b) {
+                if (a.pekerjaan < b.pekerjaan) {
+                    return -1
+                }
+                return 1
+            })
+            counter++
+        }
+        else{
+            dataHuman.sort(function sort(b,a){
+                if (a.pekerjaan < b.pekerjaan){
+                    return -1
+                }
+                return 1
+            })
+            counter--
+        }
+        renderData()
+    }
+    sortDataPekerjaan()
+    //================================ Sort Umur
+    const sortDataUmur = () => {
+        if (counter == 0) {
+            dataHuman.sort(function (a, b) {
+                if (a.umur < b.umur) {
+                    return -1
+                }
+                return 1
+            })
+            counter++
+        }
+        else{
+            dataHuman.sort(function sort(b,a){
+                if (a.umur < b.umur){
+                    return -1
+                }
+                return 1
+            })
+            counter--
+        }
+        renderData()
+    }
+    sortDataUmur()
+
+    const addData = () => {
+        let inputNama = document.getElementById('inputNama').value
+        let inputPekerjaan = document.getElementById('inputPekerjaan').value
+        let inputUmur = document.getElementById('inputUmur').value
+        let inputPic = document.getElementById('inputGambar').value
+
+        let newData = new Data(inputNama, inputPekerjaan, inputUmur, inputPic)
+        if (inputNama == 0 || inputPekerjaan == 0 || inputUmur == 0 || inputPic == 0) {
+            alert('silahkan isi dengan lengkap')
+        }
+        else {
+            dataHuman.push(newData)
+            renderData()
+        }
+
+    }
+    const delData = () => {
+        dataHuman.splice(deleteIndex, 1)
+        renderData()
+        if (dataHuman == 0){
+            alert('data tidak ada')
+        }
+    }
+</script>
+
+</html>

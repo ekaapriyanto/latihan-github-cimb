@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrItemBuah = ['Mangga', 'Anggur', 'Sirsak', 'Durian', 'Pepaya']
+        let arrStokBuah = [20, 50, 30, 15, 25]
+        let arrHargaBuah = [7000, 10000, 3000, 15000, 4000]
+        let arrInput = [0, 0, 0, 0, 0]
+        let pilih = ''
+        let jumlah1, jumlah2, jumlah3, jumlah4, jumlah5, jumlahtot, uang, kembalian
+        let repeat = true
+
+        do {
+            let menuFull = 'Selamat Datang Di Pie Store\n silahkan pilih menu di bawah ini\n'
+            for (let i = 0; i < arrItemBuah.length; i++) {
+                menuFull += (i + 1) + ` harga buah ${arrItemBuah[i]} Rp ${arrHargaBuah[i]},- dengan stok ${arrStokBuah[i]}\n`
+            }
+            menuFull += '\n6 bayar \n7 Exit'
+            pilih = parseInt(prompt(menuFull))
+
+            let kondisi = true
+            if (pilih == 1) {
+                do {
+                    arrInput[0] = parseInt(prompt(`Anda memilih buah ${arrItemBuah[0]} perkilo ${arrHargaBuah[0]}
+                    dengan stok ${arrStokBuah[0]}\nmasukan jumlah ${arrItemBuah[0]} yang di beli`))
+                    if (arrInput[0] < arrStokBuah[0]) {
+                        jumlah1 = arrInput[0] * arrHargaBuah[0]
+                        alert(`Anda membeli ${arrInput[0]} ${arrItemBuah[0]} dengan total harga ${jumlah1}
+                              \nuntuk membayar silahkan pilih no 6 pada menu awal`)
+                        kondisi = false
+                    }
+                    else {
+                        alert(`stok ${arrItemBuah[0]} tidak mencukupi silakan input ulang`)
+                        kondisi = true
+                    }
+                }
+                while (kondisi)
+            }
+            else if (pilih == 2) {
+                do {
+                    arrInput[1] = parseInt(prompt(`Anda memilih buah ${arrItemBuah[1]} perkilo ${arrHargaBuah[1]}
+                    dengan stok ${arrStokBuah[1]}\nmasukan jumlah ${arrItemBuah[1]} yang di beli`))
+                    if (arrInput[1] < arrStokBuah[1]) {
+                        jumlah2 = arrInput[1] * arrHargaBuah[1]
+                        alert(`Anda membeli ${arrInput[1]} ${arrItemBuah[1]} dengan total harga ${jumlah2}
+                        \nuntuk membayar silahkan pilih no 6 pada menu awal`)
+                        kondisi = false
+                    }
+                    else {
+                        alert(`Stok ${arrItemBuah[1]} tidak mencukupi silakan input ulang`)
+                        kondisi = true
+                    }
+                }
+                while (kondisi)
+            }
+            else if (pilih == 3) {
+                do {
+                    arrInput[2] = parseInt(prompt(`Anda memilih buah ${arrItemBuah[2]} perkilo ${arrHargaBuah[2]}
+                    dengan stok ${arrStokBuah[2]}\nmasukan jumlah ${arrItemBuah[2]} yang di beli`))
+                    if (arrInput[2] < arrStokBuah[2]) {
+                        jumlah3 = arrInput[2] * arrHargaBuah[2]
+                        alert(`Anda membeli ${arrInput[2]} ${arrItemBuah[2]} dengan total harga ${jumlah3}
+                        \nuntuk membayar silahkan pilih no 6 pada menu awal`)
+                        kondisi = false
+                    }
+                    else {
+                        alert(`stok ${arrItemBuah[2]} tidak mencukupi silakan input ulang`)
+                        kondisi = true
+                    }
+                }
+                while (kondisi)
+            }
+            else if (pilih == 4) {
+                do {
+                    arrInput[3] = parseInt(prompt(`Anda memilih buah ${arrItemBuah[3]} perkilo ${arrHargaBuah[3]}
+                    dengan stok ${arrStokBuah[3]}\nmasukan jumlah ${arrItemBuah[3]} yang di beli`))
+                    if (arrInput[3] < arrStokBuah[3]) {
+                        jumlah4 = arrInput[3] * arrHargaBuah[3]
+                        alert(`Anda membeli ${arrInput[3]} ${arrItemBuah[3]} dengan total harga ${jumlah4}
+                        \nuntuk membayar silahkan pilih no 6 pada menu awal`)
+                        kondisi = false
+                    }
+                    else {
+                        alert(`Stok ${arrStokBuah[3]} tidak mencukupi silakan input ulang`)
+                        kondisi = true
+                    }
+                }
+                while (kondisi)
+            }
+            else if (pilih == 5) {
+                do {
+                    arrInput[4] = parseInt(prompt(`Anda memilih buah ${arrItemBuah[4]} perkilo ${arrHargaBuah[4]}
+                    dengan stok ${arrStokBuah[4]}\nmasukan jumlah ${arrItemBuah[4]} yang di beli`))
+                    if (arrInput[4] < arrStokBuah[4]) {
+                        jumlah5 = arrInput[4] * arrHargaBuah[4]
+                        alert(`Anda membeli ${arrInput[4]} ${arrItemBuah[4]} dengan total harga ${jumlah5}
+                        \nuntuk membayar silahkan pilih no 6 pada menu awal`)
+                        kondisi = false
+                    }
+                    else {
+                        alert(`stok ${arrItemBuah[4]} tidak mencukupi silakan input ulang`)
+                        kondisi = true
+                    }
+                }
+                while (kondisi)
+            }
+            else if (pilih == 6) {
+                jumlahtot = 0
+                for (i = 0; i < arrItemBuah.length; i++) {
+                    jumlahtot = jumlahtot + (arrHargaBuah[i] * arrInput[i])
+                }
+                alert('total belanjan anda >>> '+ jumlahtot)
+                let kurang = false
+                do {
+                    if (kurang) {
+                        alert('anda harus membayar kurangan senilai ' + jumlahtot)
+                    }
+                    uang = parseInt(prompt('silakan masukan uang yang di bayar'))
+                    let kembalian = uang - jumlahtot
+                    if (kembalian > 0) {
+                        alert('Uang anda ' + uang + '\ntotal dibayar ' + jumlahtot + '\nkembalian ' + kembalian)
+                        kondisi = false
+                    }
+                    else if (kembalian < 0) {
+                        jumlahtot -= uang
+                        alert('Uang anda kurang')
+                        kurang = true
+                    }
+                    else {
+                        (kembalian == 0)
+                        alert('Terimakasih telah membayar dengan uang pas')
+                        kondisi = false
+                    }
+                }
+                while (kondisi)
+                repeat = confirm('apakah anda mau belanja lagi')
+                if (repeat == true) {
+                    arrInput.fill(0)
+                    arrStokBuah[0] = arrStokBuah[0] - arrInput[0]
+                    arrStokBuah[1] = arrStokBuah[1] - arrInput[1]
+                    arrStokBuah[2] = arrStokBuah[2] - arrInput[2]
+                    arrStokBuah[3] = arrStokBuah[3] - arrInput[3]
+                    arrStokBuah[4] = arrStokBuah[4] - arrInput[4]
+                }
+                else {
+                    repeat = false
+                }
+            }
+            else if (pilih == 7) {
+                repeat = confirm('apakah anda ingin keluar')
+                repeat = false
+            }
+            else {
+                alert('anda salah input')
+                repeat = true
+            }
+        }
+        while (repeat)
+
+
+    </script>
+</body>
+
+</html>

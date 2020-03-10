@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let mangga = 6000
+        let anggur = 10000
+        let sirsak = 4000
+        let pepaya = 7000
+
+        let stkmangga = 10
+        let stkanggur = 11
+        let stksirsak = 12
+        let stkpepaya = 13
+
+        let input1 = parseInt(prompt('Harga mangga perkilo 6000 \n masukan jumlah mangga'))
+        let input2 = parseInt(prompt('Harga anggur perkilo 10000 \n masukan jumlah anggur'))
+        let input3 = parseInt(prompt('Harga sirsak perkilo 4000 \n masukan jumlah mangga'))
+        let input4 = parseInt(prompt('Harga pepaya perkilo 7000 \n masukan jumlah mangga'))
+
+        let jumlah1 = mangga * input1
+        let jumlah2 = anggur * input2
+        let jumlah3 = sirsak * input3
+        let jumlah4 = pepaya * input4
+
+        let jumlah = (jumlah1 + jumlah2 + jumlah3 + jumlah4)
+
+        //let jumlah = (mangga * input1)
+
+        if (input1 > stkmangga) {
+            alert('stock mangga tidak cukup')
+        }
+        else if (input2 > stkanggur) {
+            alert('stock anggur tidak cukup')
+        }
+        else if (input3 > stksirsak) {
+            alert('stock sirsak tidak cukup')
+        }
+        else if (input4 > stkpepaya) {
+            alert('stock pepaya tidak cukup')
+        }
+        else {
+            alert('total harga mangga >>' + jumlah1 + '\ntotal harga anggur  >>' + jumlah2 +
+            '\ntotal harga sirsak   >>' + jumlah3 + '\ntotal harga pepaya  >>' + jumlah4 +
+            '\ntotal belanja semua >>>'+ jumlah)
+            let uang = parseInt(prompt('silakan masukan uang yang di bayar'))
+            let kembalian = uang - jumlah
+            if (kembalian > 0) {
+                alert('uang anda ' + uang + '\ntotal dibayar ' + jumlah + '\nkembalian ' + kembalian)
+            }
+            else if (kembalian < 0) {
+                alert('uang anda kurang')
+            }
+            else {
+                (kembalian == 0)
+                alert('anda membayar dengan uang pas')
+            }
+        }
+
+    </script>
+</body>
+
+</html>

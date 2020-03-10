@@ -1,0 +1,57 @@
+// 1. function hapus huruf vocal
+let hhv = 'eka apriyanto'
+for ( let i = 0; i < hhv.length; i++){
+hhv = hhv.replace('a','')
+hhv = hhv.replace('e','')
+hhv = hhv.replace('i','')
+hhv = hhv.replace('o','')
+hhv = hhv.replace('u','')
+}
+console.log(hhv)
+// =====================================================
+
+//2. sort aray string
+//(A - Z)
+let buah = ['mangga','apel','jeruk','pisang','durian']
+buah.sort()
+console.log(buah)
+//(Z - A)
+buah.reverse()
+console.log(buah)
+// //=====================================================
+
+//3. sort aray integer
+//(1 - 9)
+let point = [4,3,6,1,2,8,9,5,7]
+point.sort(function(a, b){return a - b})
+console.log(point)
+//(9 - 1)
+point.sort(function(a, b){return b - a})
+console.log(point)
+// //=======================================================
+
+//4. display angka terbesar dalam aray
+let angka = [1,2,3,4,5,6,7,8,9]
+angka.sort(function(a, b){return b - a})
+console.log(angka[0])
+// //======================================================
+
+// //5. ngefilter string
+let Data = ['eka', 25, 'apriyanto', 50]
+let result = []
+let countener = 0
+for (let i = 0; i < Data.length; i++){
+    if (typeof(Data[i]) == 'string'){}
+    else{
+        result[countener] = Data[i]
+        countener++
+    }
+}
+console.log(result)
+// //======================================================
+
+// // 6. menghapus huruf awal dan akhir
+let kalimat = 'mantap jiwa'
+let hapus = kalimat.slice(1,-1)
+console.log(hapus)
+
