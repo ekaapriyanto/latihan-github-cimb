@@ -1,0 +1,82 @@
+    table,
+    th,
+    td {
+        border: 1px solid rgb(248, 13, 13);
+        border-collapse: initial;
+        text-align: center;
+    }
+    
+    tr:nth-child(odd) {
+        background-color: Lavender;
+    }
+    
+    tr {
+        background-color: hotpink;
+    }
+    
+    thead {
+        color: white;
+    }
+    
+    .text-green {
+        color: green;
+    }
+    
+    .text-gray {
+        color: gray;
+    }
+    
+    .text-blue {
+        color: blue;
+    }
+    
+    .text-yellow {
+        color: yellow;
+    }
+    
+    .container {
+        border: 1px solid red;
+        margin-top: 15px;
+        width: 50%;
+        padding: 8px 8px;
+    }
+    
+    #jeff {
+        color: red;
+    }
+    
+    .rounded {
+        border-radius: 8px 1px;
+    }
+    
+    .button {
+        padding: 8px;
+        border-radius: 8px;
+        color: white;
+        border: 8px;
+        font-size: 15px;
+    }
+    /*psedo selector */
+    
+    .button:hover {
+        cursor: pointer;
+        color: gray;
+        background-color: honeydew;
+        /* transition: background-clolor ease-in-out 25ms, color ease-in-out 25ms; */
+    }
+    
+    .button-pill {
+        border-radius: 20px;
+    }
+    
+    .button-red {
+        background-color: red;
+    }
+    
+    .button-yellow {
+        background-color: yellow;
+    }
+    
+    .button-green {
+        background-color: green;
+    }

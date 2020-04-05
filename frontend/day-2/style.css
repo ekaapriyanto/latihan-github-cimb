@@ -1,0 +1,66 @@
+.box {
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border: 1px solid black;
+    display: inline-block;
+}
+.container {
+    height: 50px;
+    width: 80px;
+    display: inline-block;
+    font-size: medium;
+}
+.container-space-around {
+    display: flex;
+    justify-content: space-around;
+}
+.container-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+.container-start {
+    display: flex;
+    justify-content: flex-end;
+}
+.container2 {
+    display: flex;
+}
+.container-height {
+    display: flex;
+    height: 300px;
+    border: 1px solid red;
+    justify-content: center; /*mengikuti main(horizontal) axis */
+    align-items: center; /*mengikuti cross(vertikal) axis */
+    flex-direction: column;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.navbar-item {
+    padding: 5px;
+}
+.image-brand {
+    width: 50;
+    height: 50px;
+}
+.specificity {
+    text-align: center;
+    color: red;
+}
+#blue {
+    color: blue;
+}
+.my-input {
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid lightgray;
+    border-radius: 32px;
+}
+.my-inputhover {
+
+}
+.my-btn
